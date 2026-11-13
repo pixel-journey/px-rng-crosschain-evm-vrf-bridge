@@ -1,17 +1,15 @@
-# px-rng-crosschain-evm-vrf-bridge
+# Cross-chain RNG facade: orng.wax or EVM VRF
 
-> **Trust:** private educational lab (Tier B)  
 > **Domain:** cross-chain RNG routing  
 > **Sources:** [SOURCES.md](SOURCES.md)  
-> **Vault:** [px-contract-examples-vault](https://github.com/pixel-journey/px-contract-examples-vault)
+> **Catalog:** [px-contract-examples-vault](https://github.com/pixel-journey/px-contract-examples-vault)  
+> **Path:** [ORNG-LEARNING-PATH.md](https://github.com/pixel-journey/px-contract-examples-vault/blob/main/docs/ORNG-LEARNING-PATH.md)
 
-One facade, two backends. Preferred path builds an **unsent** `requestrand` or `requestRandomWords` body. Fallback switches when preferred is marked unavailable. Global open-job cap is 32. Fulfill is once-only.
+**Goal:** One facade, two backends. Preferred path builds an **unsent** `requestrand` or `requestRandomWords` body. Fallback switches when preferred is marked unavailable. Global open-job cap is 32. Fulfill is once-only.
 
-**Real code:** `npm test`. No live WAX or EVM calls, no wasm.
+**Code under test:** `npm test`. No live WAX or EVM calls, no wasm.
 
-WAX path: [wax-orng](https://github.com/worldwide-asset-exchange/wax-orng). EVM VRF model: [Chainlink VRF docs](https://docs.chain.link/vrf).
-
-## Run
+**WAX path:** [wax-orng](https://github.com/worldwide-asset-exchange/wax-orng). **EVM VRF model:** [Chainlink VRF docs](https://docs.chain.link/vrf).
 
 ```bash
 npm test
