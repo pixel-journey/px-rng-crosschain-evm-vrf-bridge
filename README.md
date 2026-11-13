@@ -1,15 +1,22 @@
-# Cross-chain RNG facade: orng.wax or EVM VRF
+# Route randomness: orng.wax or Chainlink-style VRF
 
-> **Domain:** cross-chain RNG routing  
+> **Domain:** cross-chain RNG facade  
 > **Sources:** [SOURCES.md](SOURCES.md)  
-> **Catalog:** [px-contract-examples-vault](https://github.com/pixel-journey/px-contract-examples-vault)  
 > **Path:** [ORNG-LEARNING-PATH.md](https://github.com/pixel-journey/px-contract-examples-vault/blob/main/docs/ORNG-LEARNING-PATH.md)
 
-**Goal:** One facade, two backends. Preferred path builds an **unsent** `requestrand` or `requestRandomWords` body. Fallback switches when preferred is marked unavailable. Global open-job cap is 32. Fulfill is once-only.
+**Goal:** Preferred/fallback routing between `orng.wax::requestrand` and a Chainlink-style `requestRandomWords` consumer. **Unsigned** bodies only (`sent: false`). Fulfill once.
 
-**Code under test:** `npm test`. No live WAX or EVM calls, no wasm.
+**Code under test:** `npm test`. No live chain, no VRF proof verification.
 
-**WAX path:** [wax-orng](https://github.com/worldwide-asset-exchange/wax-orng). **EVM VRF model:** [Chainlink VRF docs](https://docs.chain.link/vrf).
+## Learning materials
+
+| Doc | Role |
+| --- | --- |
+| [EDUCATION.md](EDUCATION.md) | Beginner → masterclass |
+| [WORKED-EXAMPLES.md](WORKED-EXAMPLES.md) | Route, gas, fulfill |
+| [TIPS.md](TIPS.md) | Primary path discipline |
+| [SECURITY.md](SECURITY.md) | Capacity and bounds |
+| [SOURCES.md](SOURCES.md) | Official |
 
 ```bash
 npm test

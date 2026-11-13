@@ -1,10 +1,11 @@
-# Security
+# Security notes — EVM facade
 
-| Surface | Closed by |
+| Mitigated | Behavior |
 | --- | --- |
-| Open-job flood | MAX_OPEN 32 |
-| Bad VRF gas | min/max callback gas |
-| Double fulfill | not open |
-| Broadcast claim | unsigned.sent = false |
+| Same preferred/fallback | refused at emptyBridge |
+| Bad assoc / seed | refused |
+| Bad gas | refused |
+| Capacity | max 32 open |
+| Double fulfill | refused |
 
-Not claimed: live orng/VRF delivery, LINK billing, wasm.
+**Not mitigated:** real VRF verification, economic fee payment.
