@@ -1,11 +1,21 @@
-# Security notes — EVM facade
+# Security — EVM/ORNG request facade
 
-| Mitigated | Behavior |
+## Closed in tests
+
+| Issue | Behavior |
 | --- | --- |
-| Same preferred/fallback | refused at emptyBridge |
-| Bad assoc / seed | refused |
-| Bad gas | refused |
-| Capacity | max 32 open |
-| Double fulfill | refused |
+| Capacity overflow | capacity |
+| Bad seed / empty assoc | refused |
+| Bad VRF gas | refused |
+| Same preferred and fallback | refused |
+| Second fulfill | not open |
+| Unknown id | unknown |
 
-**Not mitigated:** real VRF verification, economic fee payment.
+## Not closed
+
+| Concern | Guidance |
+| --- | --- |
+| Who may fulfill | Chain allow-list / VRF coordinator only |
+| Fee payment | Real LINK / native fee paths |
+| Cross-backend double delivery | Single settlement flag shared |
+| Live RPC | Not in this repo |
