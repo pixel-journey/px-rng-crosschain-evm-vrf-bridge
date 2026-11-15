@@ -1,25 +1,25 @@
-# Worked examples — EVM bridge facade
+# Worked examples — EVM VRF / orng facade
 
-## Example A — preferred orng
+Seed `ab`×32, assoc `job:42`.
 
-`emptyBridge("orng", "chainlink_vrf")` then request → unsigned target `orng.wax`.
+## Preferred orng
 
-## Example B — force VRF
+`emptyBridge("orng", "chainlink_vrf")` → unsigned target `orng.wax`, action `requestrand`, `sent:false`, one open job. Assoc `Job:ABC` is stored lowercased as `job:abc`.
 
-`forceBackend: "chainlink_vrf"` with valid gas → `requestRandomWords` body.
+## Preferred Chainlink-style VRF
 
-## Example C — bad gas
+Backend `chainlink_vrf` → target `vrf_coordinator`, `numWords` 1, `sent:false`. Gas limit 1 refused (`bad gas`).
 
-Outside 50_000..2_500_000 → `bad gas`.
+## Fallback
 
-## Example D — capacity
+Preferred orng unavailable → plan backend becomes `chainlink_vrf`.
 
-More than MAX_OPEN (32) → `capacity`.
+## Capacity and fulfill
 
-## Example E — fulfill
+`MAX_OPEN` jobs then next request → `capacity`.
 
-Open id + hex randomness → fulfilled; second fulfill → `not open`.
+Fulfill with `cd`×16 → phase `fulfilled`. Second fulfill → `not open`. Unknown id → `unknown`.
 
-## Example F — fallback
+Same preferred and fallback backends throws `same backend`. Empty assoc or seed `zz` refused.
 
-`preferredAvailable: false` routes to fallback backend.
+Bodies are **unsent**. No LINK billing, no live orng.
