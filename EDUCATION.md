@@ -1,31 +1,11 @@
-# Education — EVM VRF / orng.wax facade
+# Education — dual-backend randomness request plan
 
-> **Rung:** `npm test` passes. **Unsigned** bodies only — no broadcast.  
-> On WAX prefer [orng.wax](https://github.com/worldwide-asset-exchange/wax-orng). This lab teaches **routing**, not Chainlink production integration.
+Build an **unsent** request aimed at orng.wax or a Chainlink-style VRF coordinator, with optional fallback when the preferred path is marked unavailable.
 
-## What you should be able to do
+## Outcomes
 
-| Level | Skill |
-| --- | --- |
-| Beginner | Preferred vs fallback backend |
-| Intermediate | Shape of `requestrand` vs `requestRandomWords` bodies |
-| Masterclass | Capacity, gas bounds, fulfill once |
+1. Show both backends stay unsent.
+2. Show capacity and gas refusals.
+3. Show once-only fulfill.
 
-## Beginner
-
-`requestRandomness` picks `orng` or `chainlink_vrf` and returns an open request plus an unsent action sketch (`sent: false`).
-
-## Intermediate
-
-- ORNG path: `orng.wax` / `requestrand` / assoc + signingValue  
-- VRF path: coordinator / `requestRandomWords` / keyHash + gas + numWords 1
-
-`requestWithFallback` switches backend when preferred is unavailable.
-
-## Masterclass
-
-Fulfill records randomness once. This does **not** verify VRF proofs or pay LINK. Production bridges need those layers.
-
-## Will not teach
-
-Live Chainlink subscriptions, LINK funding, or claiming mainnet WAX cross-chain RNG.
+Numbers: [WORKED-EXAMPLES.md](WORKED-EXAMPLES.md).
