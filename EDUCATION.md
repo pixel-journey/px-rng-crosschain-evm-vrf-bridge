@@ -38,4 +38,26 @@ Seed is 64 hex chars; assoc is lowercased on the orng body.
 
 A production cross-chain product still needs: real RPC, payment of VRF fees, callback security (who may fulfill), and **one** settlement path so a late orng delivery cannot double-pay a Chainlink fulfillment. This repository only teaches planning and once-fulfill bookkeeping.
 
+### Common mistakes
+
+1. Using the same account as preferred and fallback (no real failover).  
+2. Keying fulfillment on "latest request" instead of the id in the callback.  
+3. Paying if both backends deliver.  
+4. Setting `sent: true` in a unit test that never broadcast.  
+5. Porting this facade onto WAX and skipping `orng.wax`.
+
+### Nice-to-have extensions (not in this repo)
+
+| Idea | Note |
+| --- | --- |
+| Real coordinator callback | Needs the chain's VRF contract and a consumer |
+| Words-to-game mapping | [loot CDF](https://github.com/pixel-journey/px-orng-weighted-loot-table-cdf) / rejection sampling |
+| WAX settlement of an EVM result | Bridge trust assumptions, separate audit |
+
 Numbers: [WORKED-EXAMPLES.md](WORKED-EXAMPLES.md).
+
+### Exercises
+
+1. Are request bodies sent? (`sent: false`)  
+2. Preferred === fallback — accepted? (No.)  
+3. Preferred RNG on WAX mainnet? (`orng.wax`)
