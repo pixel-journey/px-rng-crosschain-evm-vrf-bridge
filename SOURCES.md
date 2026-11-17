@@ -2,9 +2,10 @@
 
 | Source | Use |
 | --- | --- |
-| [wax-orng](https://github.com/worldwide-asset-exchange/wax-orng) | requestrand / callbacks |
-| [RNG tutorial](https://docs.wax.io/build/tutorials/create-wax-rng-smart-contract/rng_sample) | WAX sample |
-| [docs.wax.io](https://docs.wax.io/) | WAX development |
-| Chainlink VRF docs (external) | Conceptual EVM peer — not implemented here |
+| [Chainlink VRF](https://docs.chain.link/vrf) | What a real consumer must implement |
+| [docs.wax.io](https://docs.wax.io/) | If the payout settles on WAX |
+| [wax-orng](https://github.com/worldwide-asset-exchange/wax-orng) | Prefer this on WAX instead of a cross-chain facade |
 
-Related: [px-rng-crosschain-solana-pyth](https://github.com/pixel-journey/px-rng-crosschain-solana-pyth) · [px-orng-dual-callback-idempotent](https://github.com/pixel-journey/px-orng-dual-callback-idempotent)
+Related: [Solana facade](https://github.com/pixel-journey/px-rng-crosschain-solana-pyth) · [drand](https://github.com/pixel-journey/px-rng-fallback-drand-bls-verifier)
+
+Bodies in this repository stay **unsent**.
