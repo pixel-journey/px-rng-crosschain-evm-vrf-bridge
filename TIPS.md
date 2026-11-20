@@ -30,4 +30,4 @@ This file plans a request. It does not deploy a Chainlink consumer, verify a pro
 | Words-to-game mapping | [loot CDF](https://github.com/pixel-journey/px-orng-weighted-loot-table-cdf) / rejection sampling |
 | WAX settlement of an EVM result | Bridge trust assumptions, separate audit |
 
-Related: [Solana facade](https://github.com/pixel-journey/px-rng-crosschain-solana-pyth) · [dual ORNG](https://github.com/pixel-journey/px-orng-dual-callback-idempotent) · [ORNG path](https://github.com/pixel-journey/px-contract-examples-vault/blob/main/docs/ORNG-LEARNING-PATH.md)
+Related: [Solana facade](https://github.com/pixel-journey/px-rng-crosschain-solana-pyth) · [dual ORNG](https://github.com/pixel-journey/px-orng-dual-callback-idempotent) · `px-contract-examples-vault` (private index; not this public course)

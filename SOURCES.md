@@ -17,4 +17,4 @@ Bodies in this repository stay **unsent**. Preferred and fallback must differ. F
 | [dual-callback](https://github.com/pixel-journey/px-orng-dual-callback-idempotent) | Once-resolve on native orng paths |
 | [v3 starter](https://github.com/pixel-journey/px-orng-v3-randnotify-starter) | Native WAX job table |
 | [drand](https://github.com/pixel-journey/px-rng-fallback-drand-bls-verifier) | Educational public-randomness fallback |
-| [ORNG path](https://github.com/pixel-journey/px-contract-examples-vault/blob/main/docs/ORNG-LEARNING-PATH.md) | Section E |
+| `px-contract-examples-vault` (private index; not this public course) | Section E |
